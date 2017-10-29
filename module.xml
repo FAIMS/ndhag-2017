@@ -15,7 +15,7 @@
   <Main>
     <Create_new_Record l="Brick"/>
     <autonum/>
-    <GPS_Diagnostics/>
+    <GPS_Diagnostics t="gpsdiag"/>
   </Main>
   <search/>
   <Map f="noscroll">

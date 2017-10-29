@@ -1,5 +1,5 @@
 /*
- * GENERATED WITH FAIMS-TOOLS, SHA1: a167cae74048a5e5c4f3ea07c8b17acf5d4609ea
+ * GENERATED WITH FAIMS-TOOLS, SHA1: 45546006eb672ce6df46e511b2b5ab1b8cbced52
  */
 import android.util.Log;
 import android.os.Build.MODEL;
@@ -275,7 +275,7 @@ NODATA_TAB_GROUPS.add("User_Login");
 REF_TO_TYPE.put("User_Login/User/User", "list");
 REF_TO_TYPE.put("Start/Main/Create_new_Record", "button");
 REF_TO_TYPE.put("Start/Main/Next_Brick_ID", "input");
-REF_TO_TYPE.put("Start/Main/GPS_Diagnostics", "input");
+REF_TO_TYPE.put("Start/Main/GPS_Diagnostics", "gpsdiag");
 REF_TO_TYPE.put("Start/Search/Search_Term", "input");
 REF_TO_TYPE.put("Start/Search/Search_Button", "button");
 REF_TO_TYPE.put("Start/Search/Entity_List", "list");
@@ -2574,10 +2574,10 @@ for (entry : NODATA_DROPDOWNS.entrySet()) {
 /******************************************************************************/
 /*                                  GPS/MAP                                   */
 /******************************************************************************/
-
+addOnEvent("Start/Main/GPS_Diagnostics", "show", "updateGPSDiagnostics()");
 
 void updateGPSDiagnostics() {
-  String diagnosticsRef = "";
+  String diagnosticsRef = "Start/Main/GPS_Diagnostics";
   if (diagnosticsRef.equals("")) {
     return;
   }

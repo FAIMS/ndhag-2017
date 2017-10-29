@@ -212,6 +212,15 @@ public class ModuleUtil extends ModuleHelper {
     }
 
     /*
+        Type: gpsdiag
+        Ref:  Start/Main/GPS_Diagnostics
+     */
+    public static View get_Start_Main_GPSDiagnostics(Solo solo) {
+        String ref = "Start/Main/GPS_Diagnostics";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
         Type: input
         Ref:  Brick/Description/Checked_by
      */
@@ -424,15 +433,6 @@ public class ModuleUtil extends ModuleHelper {
      */
     public static EditText get_Brick_Site_Suburb(Solo solo) {
         String ref = "Brick/Site/Suburb";
-        return (android.widget.EditText) solo.getView((Object) ref);
-    }
-
-    /*
-        Type: input
-        Ref:  Start/Main/GPS_Diagnostics
-     */
-    public static EditText get_Start_Main_GPSDiagnostics(Solo solo) {
-        String ref = "Start/Main/GPS_Diagnostics";
         return (android.widget.EditText) solo.getView((Object) ref);
     }
 

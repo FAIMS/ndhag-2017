@@ -191,7 +191,7 @@
         <input ref="Next_Brick_ID" faims_style_class="required">
           <label>{Next_Brick_ID}</label>
         </input>
-        <input ref="GPS_Diagnostics">
+        <input faims_read_only="true" ref="GPS_Diagnostics">
           <label>{GPS_Diagnostics}</label>
         </input>
       </group>

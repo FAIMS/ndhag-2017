@@ -1,0 +1,14 @@
+/********************************* TIMESTAMP **********************************/
+import java.text.SimpleDateFormat;
+
+addOnEvent("Brick", "create", "populateBrickTimestamp()");
+
+void populateBrickTimestamp() {
+  String           ref    = "Brick/Site/Created_at";
+  String           fmt    = "yyyy-MM-dd";
+  SimpleDateFormat dFmt   = new SimpleDateFormat(fmt);
+  Date             now    = new Date();
+  String           nowStr = dFmt.format(now);
+
+  setFieldValue(ref, nowStr);
+}

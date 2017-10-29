@@ -1,0 +1,67 @@
+/************************************ GIS *************************************/
+// Data entry layer
+String DATA_ENTRY_LAYER    = "Data Entry Layer";
+int    DATA_ENTRY_LAYER_ID = createCanvasLayer(MAP_REF, DATA_ENTRY_LAYER);
+setSelectedLayer(MAP_REF, DATA_ENTRY_LAYER);
+
+//showBaseMap(MAP_REF, "Base Map", "files/data/K-35-053-3_Elenovo.tif");
+setMapZoom(MAP_REF, 15.0f);
+
+// Brick
+isEntity = true;
+queryName = "Brick";
+querySQL = "SELECT uuid, aenttimestamp FROM latestNonDeletedArchEnt join aenttype using (aenttypeid) where aenttypename = 'Brick'";
+ps = createPointStyle(10, Color.YELLOW, 0.2f, 0.5f);
+ls = createLineStyle(10, Color.YELLOW, 0.05f, 0.3f, null);
+pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
+ts = createTextStyle(10, Color.YELLOW, 30, Typeface.SANS_SERIF);
+showDatabaseLayer(MAP_REF, "Brick Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
+
+void clearGeometry() {
+  List geometry = getGeometryList(MAP_REF, DATA_ENTRY_LAYER_ID);
+
+  if (geometry == null)     return;
+  if (geometry.size() == 0) return;
+
+  for (geom : geometry) {
+    print("Geometry cleared:" + geom.userData.geomId);
+    clearGeometry(MAP_REF, geom.userData.geomId);
+  }
+}
+
+boolean checkForGeometry() {
+  List geometry = getGeometryList(MAP_REF, DATA_ENTRY_LAYER_ID);
+
+  boolean hasGeometry = geometry != null && geometry.size() > 0;
+
+  if (!hasGeometry) {
+    String head = "Cannot Create Record";
+    String body = "Exactly one shape must be present on the data entry layer.";
+    showWarning(head, body);
+  }
+
+  return hasGeometry;
+}
+
+void refreshMap() {
+  refreshMap(MAP_REF);
+}
+
+void fillInGPSForBrick() {
+  fillInGPS("Brick");
+}
+
+addOnEventCond("Start/Map/Create_Record", "click", "checkForGeometry()");
+addOnEvent    ("Start/Map/Create_Record", "click", "onClickStartCreatenewRecord()");
+
+addOnEvent(
+    "Start/Map/Create_Record",
+    "click",
+    "setAutoSaveGeometry(getGeometryList(MAP_REF, DATA_ENTRY_LAYER_ID))",
+    PRECEDENCE_MAX
+);
+
+addOnEvent("Start/Map", "show",  "refreshMap()");
+
+addOnEvent("Brick", "save", "clearGeometry()");
+addOnEvent("Brick", "save", "fillInGPSForBrick()");

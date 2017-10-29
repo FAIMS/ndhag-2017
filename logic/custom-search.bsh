@@ -1,0 +1,131 @@
+/******************************* CUSTOM SEARCH ********************************/
+delOnEvent("Start/Search", "show", "search()");
+
+addOnEvent("Start/Search", "show", "populateSelectUser()");
+addOnEvent("Start/Search", "show", "populateSelectDate()");
+addOnEvent("Start/Search", "show", "populateSelectFrogType()");
+
+addOnEvent("module", "load", "clearSearchResults()");
+
+final String REF_CREATED_AT = "Brick/Site/Created_at";
+final String REF_FROG_TYPE  = "Brick/Description/Frog_Type";
+
+void clearSearchResults() {
+  populateCursorList(
+      "Start/Search/Entity_List",
+      "SELECT 0 WHERE 0 = 1 LIMIT ? OFFSET ?",
+      25
+  );
+}
+
+void populateSearchFilterFromList(String ref, List l) {
+  // Add the option 'All' at the top of the list
+  List all = new ArrayList();
+  all.add("\\0");
+  all.add("{All}");
+
+  l = new ArrayList(l);
+  l.add(0, all);
+
+  // Populate dropdown
+  populateDropDown(ref, l, false);
+}
+
+void populateSearchFilterFromQuery(String ref, String q) {
+  FetchCallback populate = new FetchCallback() {
+    onFetch(result) {
+      if (isNull(result))
+        result = new ArrayList();
+
+      populateSearchFilterFromList(ref, result);
+    }
+  };
+
+  fetchAll(q, populate);
+}
+
+void populateSelectUser(){
+  String refSelectUser = "Start/Search/Select_User";
+  String getNonDeletedUsersQuery = "SELECT userid, fname || ' ' || lname "+
+                                   "  FROM user "+
+                                   " WHERE userdeleted is null ";
+
+  populateSearchFilterFromQuery(refSelectUser, getNonDeletedUsersQuery);
+}
+
+void populateSelectDate() {
+  String refDate = "Start/Search/Select_Date";
+
+  String q =
+      " SELECT DISTINCT measure, measure" +
+      "            FROM latestnondeletedaentvalue" +
+      "            JOIN attributekey USING (attributeid)" +
+      "           WHERE attributename = %s" +
+      "        ORDER BY measure";
+  q = dbReplaceFirst(q, getAttributeName(REF_CREATED_AT));
+
+  populateSearchFilterFromQuery(refDate, q);
+}
+
+void populateSelectFrogType() {
+  String ref = "Start/Search/Select_Frog_Type";
+  List frogMenuEntries = getMenuEntries(getAttributeName(REF_FROG_TYPE));
+  populateSearchFilterFromList(ref, frogMenuEntries);
+}
+
+// Overrides auto-generated definition
+void search(){
+  String refEntityList  = "Start/Search/Entity_List";
+  String refSearchTerm  = "Start/Search/Search_Term";
+
+  String refUser = "Start/Search/Select_User";
+  String refDate = "Start/Search/Select_Date";
+  String refFrog = "Start/Search/Select_Frog_Type";
+
+  String term = getFieldValue(refSearchTerm);
+  String user = getFieldValue(refUser);
+  String date = getFieldValue(refDate);
+  String frog = getFieldValue(refFrog);
+  String searchQuery = "SELECT uuid, response "+
+                       "  FROM latestNonDeletedArchEntFormattedIdentifiers  "+
+                       " WHERE uuid in (SELECT uuid "+
+                       "                  FROM latestNonDeletedArchEntIdentifiers "+
+                       "                 WHERE measure LIKE {term}||'%'  "+
+                       "                   AND ( userid = {user} OR '\\0' = {user}) " +
+                       "  AND  ( " +
+                       "           {date} = '\\0' OR" +
+                       "           uuid IN (" +
+                       "            SELECT uuid" +
+                       "              FROM latestnondeletedaentvalue" +
+                       "              JOIN attributekey USING (attributeid)" +
+                       "             WHERE attributename = '" + getAttributeName(REF_CREATED_AT) + "'" +
+                       "               AND measure = {date}" +
+                       "           )" +
+                       "       )" +
+                       "  AND  ( " +
+                       "           {frog} = '\\0' OR" +
+                       "           uuid IN (" +
+                       "            SELECT uuid" +
+                       "              FROM latestnondeletedaentvalue" +
+                       "              JOIN attributekey USING (attributeid)" +
+                       "             WHERE attributename = '" + getAttributeName(REF_FROG_TYPE) + "'" +
+                       "               AND vocabid = {frog}" +
+                       "           )" +
+                       "       )" +
+                       "                )  "+
+                       " ORDER BY response "+
+                       " LIMIT ? "+
+                       "OFFSET ? ";
+  searchQuery = dbReplaceFirst(searchQuery, "{term}", term);
+  searchQuery = dbReplaceFirst(searchQuery, "{user}", user);
+  searchQuery = dbReplaceFirst(searchQuery, "{user}", user);
+  searchQuery = dbReplaceFirst(searchQuery, "{date}", date);
+  searchQuery = dbReplaceFirst(searchQuery, "{date}", date);
+  searchQuery = dbReplaceFirst(searchQuery, "{frog}", frog);
+  searchQuery = dbReplaceFirst(searchQuery, "{frog}", frog);
+
+  populateCursorList(refEntityList, searchQuery, 25);
+  refreshTabgroupCSS("Start");
+
+  Log.d("Module", "Search query: " + searchQuery);
+}

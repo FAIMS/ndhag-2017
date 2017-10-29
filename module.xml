@@ -1,0 +1,154 @@
+<!--@POSTPROC: ./postproc.sh-->
+
+<module>
+<!--TODO: Search filter by: Author, Date, Frog Type-->
+<!--TODO: a point created in map would open a new record-->
+<!--TODO: YYYY-MM-DD-->
+
+<User_Login f="nodata">
+  <User f="noscroll">
+    <User t="list" f="user" l="Start"/>
+  </User>
+</User_Login>
+
+<Start f="nodata">
+  <Main>
+    <Create_new_Record l="Brick"/>
+    <autonum/>
+    <GPS_Diagnostics/>
+  </Main>
+  <search/>
+  <Map f="noscroll">
+    <Map t="map" f="nolabel"/>
+    <Create_Record t="button"/>
+  </Map>
+</Start>
+
+<Brick>
+  <fmt>{{Brick_ID}}-{{Location}}-{{Street_no}}-{{Street_Name}}</fmt>
+  <Site>
+    <cols>
+      <author>Created by</author>
+      <Created_at/>
+    </cols>
+    <Brick_ID f="autonum"/>
+    <Location>
+      <desc>Name of the place, any detailed identification of the location</desc>
+    </Location>
+    <Street_no b="decimal">Street no.</Street_no>
+    <Street_Name/>
+    <Suburb/>
+    <Postcode b="decimal"/>
+    <gps/>
+    <Location_Notes>
+      <desc>Notes to the original location where the brick has been found.</desc>
+    </Location_Notes>
+    <Location_Plans t="camera">
+      <desc>Photo of any available plan, map of the location</desc>
+    </Location_Plans>
+  </Site>
+  <Description>
+    <Colour t="checkbox">
+      <desc>Check all colours that apply</desc>
+      <opts>
+        <opt>Black</opt>
+        <opt>Brown</opt>
+        <opt>Dark Brown</opt>
+        <opt>Light Brown</opt>
+        <opt>Cream</opt>
+        <opt>Grey</opt>
+        <opt>Dark Grey</opt>
+        <opt>Light Grey</opt>
+        <opt>Orange</opt>
+        <opt>Dark Orange</opt>
+        <opt>Light Orange</opt>
+        <opt>Pink</opt>
+        <opt>Purple</opt>
+        <opt>Red</opt>
+        <opt>Dark Red</opt>
+        <opt>Light Red</opt>
+        <opt>Salmon</opt>
+        <opt>Dark Salmon</opt>
+        <opt>Light Salmon</opt>
+        <opt>Yellow</opt>
+        <opt>White</opt>
+      </opts>
+    </Colour>
+    <Width_cm b="decimal">
+      Width (cm)
+      <desc>Width in cm</desc>
+    </Width_cm>
+    <Length_cm b="decimal">
+      Length (cm)
+      <desc>Length in cm</desc>
+    </Length_cm>
+    <Height_cm b="decimal">
+      Height (cm)
+      <desc>Height in cm</desc>
+    </Height_cm>
+    <Weight_g b="decimal">
+      Weight (g)
+      <desc>Weight in grams</desc>
+    </Weight_g>
+    <Brick_Photo t="camera">
+      <desc>Take photo of an entire brick</desc>
+    </Brick_Photo>
+    <Frog_Type>
+      <desc>Select the type of frog from the list.</desc>
+      <opts>
+        <opt>Oval</opt>
+        <opt>Rectangular</opt>
+        <opt>Oval (long)</opt>
+        <opt>Heart-shaped</opt>
+        <opt>Oval (rectangular)</opt>
+        <opt>Diamond</opt>
+        <opt>Oval (pointed)</opt>
+        <opt>Rectangular</opt>
+        <opt>Rectangular (short)</opt>
+        <opt>Rectangular (long)</opt>
+        <opt>Other</opt>
+        <opt>None</opt>
+      </opts>
+    </Frog_Type>
+    <Frog_Notes>
+      <desc>Notes to the type of used frog</desc>
+    </Frog_Notes>
+    <Frog_Photo t="camera">
+      <desc>Take photo of frog in detail</desc>
+    </Frog_Photo>
+    <Technology>
+      <desc>Choose the option that best describes the level of technology used to make this brick (where known).</desc>
+      <opts>
+        <opt>Technology 1</opt>
+        <opt>Technology 2</opt>
+        <opt>Technology 3</opt>
+      </opts>
+    </Technology>
+    <Shape_Notes>
+      <desc>Describe the shape of frog</desc>
+    </Shape_Notes>
+    <Material_Notes>
+      <desc>Describe what kind of material has been used</desc>
+    </Material_Notes>
+    <Preservation>
+      <desc>Describe the state of preservation of the material</desc>
+    </Preservation>
+    <Validate>
+      <desc>Date of checking validity on entered data </desc>
+    </Validate>
+    <cols>
+      <Date_Checked b="date"/>
+      <Checked_by>
+        <desc>The first and the last name of person checking the record against the artefact</desc>
+      </Checked_by>
+    </cols>
+  </Description>
+</Brick>
+
+<logic><![CDATA[
+<!--@SOURCE: logic/timestamp.bsh-->
+<!--@SOURCE: logic/custom-search.bsh-->
+<!--@SOURCE: logic/gis.bsh-->
+]]></logic>
+
+</module>

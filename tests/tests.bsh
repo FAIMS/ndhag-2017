@@ -1,0 +1,102 @@
+ClickMapCreateRecord() {
+  void run() {
+    executeOnEvent("Start/Map/Create_Record", "click");
+  }
+  return this;
+}
+
+// CREATING A Brick RECORD POPULATES TIMESTAMP
+{
+  executeOnEvent("Brick", "create");
+
+  String ref = "Brick/Site/Created_at";
+  String val = getFieldValue(ref);
+
+  assert(val != null);
+  assert(val.length() == "yyyy-MM-dd".length());
+}
+
+// GIS FUNCTIONS EXECUTE WITHOUT EXCEPTIONS
+{
+  CheckForGeometry() {
+    void run() { checkForGeometry(); }
+    return this;
+  }
+
+  clearGeometry();
+  getStdout(CheckForGeometry());
+  refreshMap();
+  fillInGPSForBrick();
+}
+
+// CLICKING "Start/Map/Create_Record" YIELDS AN ERROR MESSAGE WHEN THERE'S NO
+// GEOMETRY AND DOES NOT LEAVE TAB GROUP
+{
+  getGeometryList(String ref, int i) { return null; }
+
+  updateDisplayedTabGroup("Start");
+
+  String tgBefore = getDisplayedTabGroup();
+  String expected =
+          "showWarning: " +
+          "Cannot Create Record | " +
+          "Exactly one shape must be present on the data entry layer.\n";
+  String out = getStdout(ClickMapCreateRecord());
+  String tgAfter = getDisplayedTabGroup();
+
+  assert(expected.equals(out));
+  assert(tgBefore.equals(tgAfter));
+}
+
+// CLICKING "Start/Map/Create_Record" YIELDS AN ERROR MESSAGE WHEN THERE'S NO
+// GEOMETRY AND DOES NOT LEAVE TAB GROUP
+{
+  getGeometryList(String ref, int i) { return new ArrayList(); }
+
+  updateDisplayedTabGroup("Start");
+
+  String tgBefore = getDisplayedTabGroup();
+  String expected =
+          "showWarning: " +
+          "Cannot Create Record | " +
+          "Exactly one shape must be present on the data entry layer.\n";
+  String out = getStdout(ClickMapCreateRecord());
+  String tgAfter = getDisplayedTabGroup();
+
+  assert(expected.equals(out));
+  assert(tgBefore.equals(tgAfter));
+}
+
+// CLICKING "Start/Map/Create_Record" YIELDS NO ERROR MESSAGE WHEN THERE'S
+// GEOMETRY AND DOES LEAVE TAB GROUP
+{
+  getGeometryList(String ref, int i) {
+    List geo = new ArrayList();
+    geo.add("dummy");
+    return geo;
+  }
+
+  updateDisplayedTabGroup("Start");
+
+  String tgBefore = getDisplayedTabGroup();
+  String expected = "";
+  String out = getStdout(ClickMapCreateRecord());
+  String tgAfter = getDisplayedTabGroup();
+
+  assert(expected.equals(out));
+  assert(!tgBefore.equals(tgAfter));
+}
+
+{
+  SearchFns() {
+    void run() {
+      populateSelectUser();
+      populateSelectDate();
+      populateSelectFrogType();
+      search();
+    }
+    return this;
+  }
+
+  getStdout(SearchFns());
+}

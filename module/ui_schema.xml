@@ -1,0 +1,459 @@
+<?xml version='1.0' encoding='utf-8'?>
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:jr="http://openrosa.org/javarosa" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>FILL THIS IN</h:title>
+    <model>
+      <instance>
+        <faims id="FILL_THIS_IN">
+          <!--START: Style-->
+          <style>
+            <orientation>
+              <orientation/>
+            </orientation>
+            <even>
+              <layout_weight/>
+            </even>
+            <large>
+              <layout_weight/>
+            </large>
+          </style>
+          <!--END: Style-->
+          <User_Login>
+            <User>
+              <User/>
+            </User>
+          </User_Login>
+          <Start>
+            <Main>
+              <Create_new_Record/>
+              <Next_Brick_ID/>
+              <GPS_Diagnostics/>
+            </Main>
+            <Search>
+              <Colgroup_0>
+                <Col_0>
+                  <Search_Term/>
+                </Col_0>
+                <Col_1>
+                  <Search_Button/>
+                </Col_1>
+              </Colgroup_0>
+              <Colgroup_1>
+                <Col_0>
+                  <Select_User/>
+                </Col_0>
+                <Col_1>
+                  <Select_Date/>
+                </Col_1>
+                <Col_2>
+                  <Select_Frog_Type/>
+                </Col_2>
+              </Colgroup_1>
+              <Select_User/>
+              <Entity_List/>
+            </Search>
+            <Map>
+              <Map/>
+              <Colgroup_1>
+                <Col_1>
+                  <Center_Me_1/>
+                </Col_1>
+                <Col_2>
+                  <Save_Map_Settings_1/>
+                </Col_2>
+              </Colgroup_1>
+              <Create_Record/>
+            </Map>
+          </Start>
+          <Brick>
+            <Site>
+              <Colgroup_1>
+                <Col_1>
+                  <Brick_author/>
+                </Col_1>
+                <Col_2>
+                  <Created_at/>
+                </Col_2>
+              </Colgroup_1>
+              <Brick_ID/>
+              <Location/>
+              <Street_no/>
+              <Street_Name/>
+              <Suburb/>
+              <Postcode/>
+              <Colgroup_2>
+                <Col_1>
+                  <Latitude/>
+                </Col_1>
+                <Col_2>
+                  <Longitude/>
+                </Col_2>
+              </Colgroup_2>
+              <Colgroup_3>
+                <Col_1>
+                  <Northing/>
+                </Col_1>
+                <Col_2>
+                  <Easting/>
+                </Col_2>
+                <Col_3>
+                  <Accuracy/>
+                </Col_3>
+              </Colgroup_3>
+              <Take_From_GPS_1/>
+              <Location_Notes/>
+              <Location_Plans/>
+              <Location_Plans_Button_1/>
+            </Site>
+            <Description>
+              <Colour/>
+              <Width_cm/>
+              <Length_cm/>
+              <Height_cm/>
+              <Weight_g/>
+              <Brick_Photo/>
+              <Brick_Photo_Button_1/>
+              <Frog_Type/>
+              <Frog_Notes/>
+              <Frog_Photo/>
+              <Frog_Photo_Button_1/>
+              <Technology/>
+              <Shape_Notes/>
+              <Material_Notes/>
+              <Preservation/>
+              <Validate/>
+              <Colgroup_1>
+                <Col_1>
+                  <Date_Checked/>
+                </Col_1>
+                <Col_2>
+                  <Checked_by/>
+                </Col_2>
+              </Colgroup_1>
+            </Description>
+          </Brick>
+        </faims>
+      </instance>
+      <bind nodeset="/faims/Start/Main/Next_Brick_ID" type="decimal"/>
+      <bind nodeset="/faims/Brick/Site/Street_no" type="decimal"/>
+      <bind nodeset="/faims/Brick/Site/Postcode" type="decimal"/>
+      <bind nodeset="/faims/Brick/Description/Width_cm" type="decimal"/>
+      <bind nodeset="/faims/Brick/Description/Length_cm" type="decimal"/>
+      <bind nodeset="/faims/Brick/Description/Height_cm" type="decimal"/>
+      <bind nodeset="/faims/Brick/Description/Weight_g" type="decimal"/>
+      <bind nodeset="/faims/Brick/Description/Colgroup_1/Col_1/Date_Checked" type="date"/>
+    </model>
+  </h:head>
+  <h:body>
+    <!--START: Style-->
+    <group ref="style">
+      <label/>
+      <group ref="orientation">
+        <label/>
+        <input ref="orientation">
+          <label>horizontal</label>
+        </input>
+      </group>
+      <group ref="even">
+        <label/>
+        <input ref="layout_weight">
+          <label>1</label>
+        </input>
+      </group>
+      <group ref="large">
+        <label/>
+        <input ref="layout_weight">
+          <label>3</label>
+        </input>
+      </group>
+    </group>
+    <!--END: Style-->
+    <group ref="User_Login">
+      <label>{User_Login}</label>
+      <group ref="User" faims_scrollable="false">
+        <label>{User}</label>
+        <select1 appearance="compact" ref="User">
+          <label>{User}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+      </group>
+    </group>
+    <group ref="Start">
+      <label>{Start}</label>
+      <group ref="Main">
+        <label>{Main}</label>
+        <trigger ref="Create_new_Record">
+          <label>{Create_new_Record}</label>
+        </trigger>
+        <input ref="Next_Brick_ID" faims_style_class="required">
+          <label>{Next_Brick_ID}</label>
+        </input>
+        <input ref="GPS_Diagnostics">
+          <label>{GPS_Diagnostics}</label>
+        </input>
+      </group>
+      <group ref="Search" faims_scrollable="false">
+        <label>{Search}</label>
+        <group ref="Colgroup_0" faims_style="orientation">
+          <label/>
+          <group ref="Col_0" faims_style="even">
+            <label/>
+            <input ref="Search_Term">
+              <label>{Search_Term}</label>
+            </input>
+          </group>
+          <group ref="Col_1" faims_style="large">
+            <label/>
+            <trigger ref="Search_Button">
+              <label>{Search}</label>
+            </trigger>
+          </group>
+        </group>
+        <group ref="Colgroup_1" faims_style="orientation">
+          <label/>
+          <group ref="Col_0" faims_style="even">
+            <label/>
+            <select1 ref="Select_User">
+              <label>{Select_User}</label>
+              <item>
+                <label>Options not loaded</label>
+                <value>Options not loaded</value>
+              </item>
+            </select1>
+          </group>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <select1 ref="Select_Date">
+              <label>{Select_Date}</label>
+              <item>
+                <label>Options not loaded</label>
+                <value>Options not loaded</value>
+              </item>
+            </select1>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <select1 ref="Select_Frog_Type">
+              <label>{Select_Frog_Type}</label>
+              <item>
+                <label>Options not loaded</label>
+                <value>Options not loaded</value>
+              </item>
+            </select1>
+          </group>
+        </group>
+        <select1 appearance="compact" ref="Entity_List">
+          <label>{Entity_List}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+      </group>
+      <group ref="Map" faims_scrollable="false">
+        <label>{Map}</label>
+        <input faims_map="true" ref="Map">
+          <label/>
+        </input>
+        <group ref="Colgroup_1" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <trigger ref="Center_Me_1">
+              <label>{Center_Me}</label>
+            </trigger>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <trigger ref="Save_Map_Settings_1">
+              <label>{Save_Map_Settings}</label>
+            </trigger>
+          </group>
+        </group>
+        <trigger ref="Create_Record">
+          <label>{Create_Record}</label>
+        </trigger>
+      </group>
+    </group>
+    <group ref="Brick" faims_archent_type="Brick">
+      <label>{Brick}</label>
+      <group ref="Site">
+        <label>{Site}</label>
+        <group ref="Colgroup_1" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Brick author" faims_attribute_type="measure" ref="Brick_author" faims_read_only="true">
+              <label>{Created_by}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Created at" faims_attribute_type="measure" ref="Created_at">
+              <label>{Created_at}</label>
+            </input>
+          </group>
+        </group>
+        <input faims_attribute_name="Brick ID" faims_attribute_type="measure" ref="Brick_ID">
+          <label>{Brick_ID}</label>
+        </input>
+        <input faims_attribute_name="Location" faims_attribute_type="measure" ref="Location">
+          <label>{Location}</label>
+        </input>
+        <input faims_attribute_name="Street no" faims_attribute_type="measure" ref="Street_no">
+          <label>{Street_no_}</label>
+        </input>
+        <input faims_attribute_name="Street Name" faims_attribute_type="measure" ref="Street_Name">
+          <label>{Street_Name}</label>
+        </input>
+        <input faims_attribute_name="Suburb" faims_attribute_type="measure" ref="Suburb">
+          <label>{Suburb}</label>
+        </input>
+        <input faims_attribute_name="Postcode" faims_attribute_type="measure" ref="Postcode">
+          <label>{Postcode}</label>
+        </input>
+        <group ref="Colgroup_2" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Latitude" faims_attribute_type="measure" ref="Latitude" faims_read_only="true">
+              <label>{Latitude}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Longitude" faims_attribute_type="measure" ref="Longitude" faims_read_only="true">
+              <label>{Longitude}</label>
+            </input>
+          </group>
+        </group>
+        <group ref="Colgroup_3" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Northing" faims_attribute_type="measure" ref="Northing" faims_read_only="true">
+              <label>{Northing}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Easting" faims_attribute_type="measure" ref="Easting" faims_read_only="true">
+              <label>{Easting}</label>
+            </input>
+          </group>
+          <group ref="Col_3" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Accuracy" faims_attribute_type="measure" ref="Accuracy" faims_read_only="true">
+              <label>{Accuracy}</label>
+            </input>
+          </group>
+        </group>
+        <trigger ref="Take_From_GPS_1">
+          <label>{Take_From_GPS}</label>
+        </trigger>
+        <input faims_attribute_name="Location Notes" faims_attribute_type="measure" ref="Location_Notes">
+          <label>{Location_Notes}</label>
+        </input>
+        <select faims_sync="true" type="camera" faims_attribute_name="Location Plans" faims_attribute_type="measure" ref="Location_Plans">
+          <label>{Location_Plans}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select>
+        <trigger ref="Location_Plans_Button_1">
+          <label>{Location_Plans}</label>
+        </trigger>
+      </group>
+      <group ref="Description">
+        <label>{Description}</label>
+        <select faims_attribute_name="Colour" faims_attribute_type="vocab" ref="Colour">
+          <label>{Colour}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select>
+        <input faims_attribute_name="Width cm" faims_attribute_type="measure" ref="Width_cm">
+          <label>{Width__cm_}</label>
+        </input>
+        <input faims_attribute_name="Length cm" faims_attribute_type="measure" ref="Length_cm">
+          <label>{Length__cm_}</label>
+        </input>
+        <input faims_attribute_name="Height cm" faims_attribute_type="measure" ref="Height_cm">
+          <label>{Height__cm_}</label>
+        </input>
+        <input faims_attribute_name="Weight g" faims_attribute_type="measure" ref="Weight_g">
+          <label>{Weight__g_}</label>
+        </input>
+        <select faims_sync="true" type="camera" faims_attribute_name="Brick Photo" faims_attribute_type="measure" ref="Brick_Photo">
+          <label>{Brick_Photo}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select>
+        <trigger ref="Brick_Photo_Button_1">
+          <label>{Brick_Photo}</label>
+        </trigger>
+        <select1 faims_attribute_name="Frog Type" faims_attribute_type="vocab" ref="Frog_Type">
+          <label>{Frog_Type}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <input faims_attribute_name="Frog Notes" faims_attribute_type="measure" ref="Frog_Notes">
+          <label>{Frog_Notes}</label>
+        </input>
+        <select faims_sync="true" type="camera" faims_attribute_name="Frog Photo" faims_attribute_type="measure" ref="Frog_Photo">
+          <label>{Frog_Photo}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select>
+        <trigger ref="Frog_Photo_Button_1">
+          <label>{Frog_Photo}</label>
+        </trigger>
+        <select1 faims_attribute_name="Technology" faims_attribute_type="vocab" ref="Technology">
+          <label>{Technology}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <input faims_attribute_name="Shape Notes" faims_attribute_type="measure" ref="Shape_Notes">
+          <label>{Shape_Notes}</label>
+        </input>
+        <input faims_attribute_name="Material Notes" faims_attribute_type="measure" ref="Material_Notes">
+          <label>{Material_Notes}</label>
+        </input>
+        <input faims_attribute_name="Preservation" faims_attribute_type="measure" ref="Preservation">
+          <label>{Preservation}</label>
+        </input>
+        <input faims_attribute_name="Validate" faims_attribute_type="measure" ref="Validate">
+          <label>{Validate}</label>
+        </input>
+        <group ref="Colgroup_1" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Date Checked" faims_attribute_type="measure" ref="Date_Checked">
+              <label>{Date_Checked}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Checked by" faims_attribute_type="measure" ref="Checked_by">
+              <label>{Checked_by}</label>
+            </input>
+          </group>
+        </group>
+      </group>
+    </group>
+  </h:body>
+</h:html>

@@ -32,13 +32,17 @@
       <Created_at/>
     </cols>
     <Brick_ID f="autonum"/>
-    <Location>
+    <Location f="notnull">
       <desc>Name of the place, any detailed identification of the location</desc>
     </Location>
-    <Street_no b="decimal">Street no.</Street_no>
-    <Street_Name/>
-    <Suburb/>
-    <Postcode b="decimal"/>
+     <cols>
+      <Street_no b="decimal" f="notnull">Street no.</Street_no>
+      <Street_Name f="notnull"/>
+     </cols>  
+     <cols>
+      <Suburb f="notnull"/>
+      <Postcode b="decimal"/>
+     </cols> 
     <gps/>
     <Location_Notes>
       <desc>Notes to the original location where the brick has been found.</desc>
@@ -48,7 +52,7 @@
     </Location_Plans>
   </Site>
   <Description>
-    <Colour t="checkbox">
+    <Colour t="checkbox" f="notnull">
       <desc>Check all colours that apply</desc>
       <opts>
         <opt>Black</opt>
@@ -74,26 +78,26 @@
         <opt>White</opt>
       </opts>
     </Colour>
-    <Width_cm b="decimal">
+    <Width_cm b="decimal" f="notnull">
       Width (cm)
       <desc>Width in cm</desc>
     </Width_cm>
-    <Length_cm b="decimal">
+    <Length_cm b="decimal" f="notnull">
       Length (cm)
       <desc>Length in cm</desc>
     </Length_cm>
-    <Height_cm b="decimal">
+    <Height_cm b="decimal" f="notnull">
       Height (cm)
       <desc>Height in cm</desc>
     </Height_cm>
-    <Weight_g b="decimal">
+    <Weight_g b="decimal" f="notnull">
       Weight (g)
       <desc>Weight in grams</desc>
     </Weight_g>
-    <Brick_Photo t="camera">
+    <Brick_Photo t="camera" f="notnull">
       <desc>Take photo of an entire brick</desc>
     </Brick_Photo>
-    <Frog_Type>
+    <Frog_Type f="notnull">
       <desc>Select the type of frog from the list.</desc>
       <opts>
         <opt>Oval</opt>
@@ -116,12 +120,16 @@
     <Frog_Photo t="camera">
       <desc>Take photo of frog in detail</desc>
     </Frog_Photo>
-    <Technology>
+    <Technology f="notnull">
       <desc>Choose the option that best describes the level of technology used to make this brick (where known).</desc>
       <opts>
-        <opt>Technology 1</opt>
-        <opt>Technology 2</opt>
-        <opt>Technology 3</opt>
+        <opt>Hand Made</opt>
+        <opt>Metal Press</opt>
+        <opt>Metal Mould</opt>
+        <opt>Press</opt>
+        <opt>Wooden Mould</opt>
+        <opt>Other</opt>
+        <opt>N/A</opt>
       </opts>
     </Technology>
     <Shape_Notes>
@@ -130,7 +138,7 @@
     <Material_Notes>
       <desc>Describe what kind of material has been used</desc>
     </Material_Notes>
-    <Preservation>
+    <Preservation f="notnull">
       <desc>Describe the state of preservation of the material</desc>
     </Preservation>
     <Validate>
@@ -138,7 +146,7 @@
     </Validate>
     <cols>
       <Date_Checked b="date"/>
-      <Checked_by>
+      <Checked_by f="notnull">
         <desc>The first and the last name of person checking the record against the artefact</desc>
       </Checked_by>
     </cols>

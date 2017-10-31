@@ -141,11 +141,11 @@
     <Preservation f="notnull">
       <desc>Describe the state of preservation of the material</desc>
     </Preservation>
-    <Validate>
-      <desc>Date of checking validity on entered data </desc>
-    </Validate>
+    <Validate t="button"/>
     <cols>
-      <Date_Checked b="date"/>
+      <Date_Checked b="date">
+        <desc>Date of checking validity on entered data </desc>
+      </Date_Checked>
       <Checked_by f="notnull">
         <desc>The first and the last name of person checking the record against the artefact</desc>
       </Checked_by>
@@ -157,6 +157,7 @@
 <!--@SOURCE: logic/timestamp.bsh-->
 <!--@SOURCE: logic/custom-search.bsh-->
 <!--@SOURCE: logic/gis.bsh-->
+<!--@SOURCE: logic/validation.bsh-->
 ]]></logic>
 
 </module>

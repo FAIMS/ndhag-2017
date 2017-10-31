@@ -100,3 +100,33 @@ ClickMapCreateRecord() {
 
   getStdout(SearchFns());
 }
+
+{
+  Validate() {
+    void run() {
+      executeOnEvent("Brick/Description/Validate", "click");
+    }
+    return this;
+  }
+
+  String expected =
+      "showWarning: {validation_results} | {please_fill_out_the_following_fields}- {Location}" +
+    "\n- {Street_no_}" +
+    "\n- {Street_Name}" +
+    "\n- {Suburb}" +
+    "\n- {Colour}" +
+    "\n- {Width__cm_}" +
+    "\n- {Length__cm_}" +
+    "\n- {Height__cm_}" +
+    "\n- {Weight__g_}" +
+    "\n- {Brick_Photo}" +
+    "\n- {Frog_Type}" +
+    "\n- {Technology}" +
+    "\n- {Preservation}" +
+    "\n- {Checked_by}" +
+    "\n" +
+    "\n";
+  String out = getStdout(Validate());
+
+  assert(expected.equals(out));
+}

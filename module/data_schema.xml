@@ -197,11 +197,19 @@
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
       <lookup>
-        <term>{Technology_1}
+        <term>{Hand_Made}
 <description></description></term>
-        <term>{Technology_2}
+        <term>{Metal_Press}
 <description></description></term>
-        <term>{Technology_3}
+        <term>{Metal_Mould}
+<description></description></term>
+        <term>{Press}
+<description></description></term>
+        <term>{Wooden_Mould}
+<description></description></term>
+        <term>{Other}
+<description></description></term>
+        <term>{N_A}
 <description></description></term>
       </lookup>
     </property>
@@ -220,13 +228,8 @@
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
     </property>
-    <property name="Validate" type="measure">
-      <description>Date of checking validity on entered data </description>
-      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
     <property name="Date Checked" type="measure">
-      <description></description>
+      <description>Date of checking validity on entered data </description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
     </property>

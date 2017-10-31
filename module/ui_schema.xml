@@ -77,19 +77,31 @@
               </Colgroup_1>
               <Brick_ID/>
               <Location/>
-              <Street_no/>
-              <Street_Name/>
-              <Suburb/>
-              <Postcode/>
               <Colgroup_2>
+                <Col_1>
+                  <Street_no/>
+                </Col_1>
+                <Col_2>
+                  <Street_Name/>
+                </Col_2>
+              </Colgroup_2>
+              <Colgroup_3>
+                <Col_1>
+                  <Suburb/>
+                </Col_1>
+                <Col_2>
+                  <Postcode/>
+                </Col_2>
+              </Colgroup_3>
+              <Colgroup_4>
                 <Col_1>
                   <Latitude/>
                 </Col_1>
                 <Col_2>
                   <Longitude/>
                 </Col_2>
-              </Colgroup_2>
-              <Colgroup_3>
+              </Colgroup_4>
+              <Colgroup_5>
                 <Col_1>
                   <Northing/>
                 </Col_1>
@@ -99,7 +111,7 @@
                 <Col_3>
                   <Accuracy/>
                 </Col_3>
-              </Colgroup_3>
+              </Colgroup_5>
               <Take_From_GPS_1/>
               <Location_Notes/>
               <Location_Plans/>
@@ -135,8 +147,8 @@
         </faims>
       </instance>
       <bind nodeset="/faims/Start/Main/Next_Brick_ID" type="decimal"/>
-      <bind nodeset="/faims/Brick/Site/Street_no" type="decimal"/>
-      <bind nodeset="/faims/Brick/Site/Postcode" type="decimal"/>
+      <bind nodeset="/faims/Brick/Site/Colgroup_2/Col_1/Street_no" type="decimal"/>
+      <bind nodeset="/faims/Brick/Site/Colgroup_3/Col_2/Postcode" type="decimal"/>
       <bind nodeset="/faims/Brick/Description/Width_cm" type="decimal"/>
       <bind nodeset="/faims/Brick/Description/Length_cm" type="decimal"/>
       <bind nodeset="/faims/Brick/Description/Height_cm" type="decimal"/>
@@ -300,22 +312,40 @@
         <input faims_attribute_name="Brick ID" faims_attribute_type="measure" ref="Brick_ID">
           <label>{Brick_ID}</label>
         </input>
-        <input faims_attribute_name="Location" faims_attribute_type="measure" ref="Location">
+        <input faims_attribute_name="Location" faims_attribute_type="measure" ref="Location" faims_style_class="required">
           <label>{Location}</label>
         </input>
-        <input faims_attribute_name="Street no" faims_attribute_type="measure" ref="Street_no">
-          <label>{Street_no_}</label>
-        </input>
-        <input faims_attribute_name="Street Name" faims_attribute_type="measure" ref="Street_Name">
-          <label>{Street_Name}</label>
-        </input>
-        <input faims_attribute_name="Suburb" faims_attribute_type="measure" ref="Suburb">
-          <label>{Suburb}</label>
-        </input>
-        <input faims_attribute_name="Postcode" faims_attribute_type="measure" ref="Postcode">
-          <label>{Postcode}</label>
-        </input>
         <group ref="Colgroup_2" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Street no" faims_attribute_type="measure" ref="Street_no" faims_style_class="required">
+              <label>{Street_no_}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Street Name" faims_attribute_type="measure" ref="Street_Name" faims_style_class="required">
+              <label>{Street_Name}</label>
+            </input>
+          </group>
+        </group>
+        <group ref="Colgroup_3" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Suburb" faims_attribute_type="measure" ref="Suburb" faims_style_class="required">
+              <label>{Suburb}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Postcode" faims_attribute_type="measure" ref="Postcode">
+              <label>{Postcode}</label>
+            </input>
+          </group>
+        </group>
+        <group ref="Colgroup_4" faims_style="orientation">
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>
@@ -330,7 +360,7 @@
             </input>
           </group>
         </group>
-        <group ref="Colgroup_3" faims_style="orientation">
+        <group ref="Colgroup_5" faims_style="orientation">
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>
@@ -370,26 +400,26 @@
       </group>
       <group ref="Description">
         <label>{Description}</label>
-        <select faims_attribute_name="Colour" faims_attribute_type="vocab" ref="Colour">
+        <select faims_attribute_name="Colour" faims_attribute_type="vocab" ref="Colour" faims_style_class="required">
           <label>{Colour}</label>
           <item>
             <label>Options not loaded</label>
             <value>Options not loaded</value>
           </item>
         </select>
-        <input faims_attribute_name="Width cm" faims_attribute_type="measure" ref="Width_cm">
+        <input faims_attribute_name="Width cm" faims_attribute_type="measure" ref="Width_cm" faims_style_class="required">
           <label>{Width__cm_}</label>
         </input>
-        <input faims_attribute_name="Length cm" faims_attribute_type="measure" ref="Length_cm">
+        <input faims_attribute_name="Length cm" faims_attribute_type="measure" ref="Length_cm" faims_style_class="required">
           <label>{Length__cm_}</label>
         </input>
-        <input faims_attribute_name="Height cm" faims_attribute_type="measure" ref="Height_cm">
+        <input faims_attribute_name="Height cm" faims_attribute_type="measure" ref="Height_cm" faims_style_class="required">
           <label>{Height__cm_}</label>
         </input>
-        <input faims_attribute_name="Weight g" faims_attribute_type="measure" ref="Weight_g">
+        <input faims_attribute_name="Weight g" faims_attribute_type="measure" ref="Weight_g" faims_style_class="required">
           <label>{Weight__g_}</label>
         </input>
-        <select faims_sync="true" type="camera" faims_attribute_name="Brick Photo" faims_attribute_type="measure" ref="Brick_Photo">
+        <select faims_sync="true" type="camera" faims_attribute_name="Brick Photo" faims_attribute_type="measure" ref="Brick_Photo" faims_style_class="required">
           <label>{Brick_Photo}</label>
           <item>
             <label>Options not loaded</label>
@@ -399,7 +429,7 @@
         <trigger ref="Brick_Photo_Button_1">
           <label>{Brick_Photo}</label>
         </trigger>
-        <select1 faims_attribute_name="Frog Type" faims_attribute_type="vocab" ref="Frog_Type">
+        <select1 faims_attribute_name="Frog Type" faims_attribute_type="vocab" ref="Frog_Type" faims_style_class="required">
           <label>{Frog_Type}</label>
           <item>
             <label>Options not loaded</label>
@@ -419,7 +449,7 @@
         <trigger ref="Frog_Photo_Button_1">
           <label>{Frog_Photo}</label>
         </trigger>
-        <select1 faims_attribute_name="Technology" faims_attribute_type="vocab" ref="Technology">
+        <select1 faims_attribute_name="Technology" faims_attribute_type="vocab" ref="Technology" faims_style_class="required">
           <label>{Technology}</label>
           <item>
             <label>Options not loaded</label>
@@ -432,12 +462,12 @@
         <input faims_attribute_name="Material Notes" faims_attribute_type="measure" ref="Material_Notes">
           <label>{Material_Notes}</label>
         </input>
-        <input faims_attribute_name="Preservation" faims_attribute_type="measure" ref="Preservation">
+        <input faims_attribute_name="Preservation" faims_attribute_type="measure" ref="Preservation" faims_style_class="required">
           <label>{Preservation}</label>
         </input>
-        <input faims_attribute_name="Validate" faims_attribute_type="measure" ref="Validate">
+        <trigger ref="Validate">
           <label>{Validate}</label>
-        </input>
+        </trigger>
         <group ref="Colgroup_1" faims_style="orientation">
           <label/>
           <group ref="Col_1" faims_style="even">
@@ -448,7 +478,7 @@
           </group>
           <group ref="Col_2" faims_style="even">
             <label/>
-            <input faims_attribute_name="Checked by" faims_attribute_type="measure" ref="Checked_by">
+            <input faims_attribute_name="Checked by" faims_attribute_type="measure" ref="Checked_by" faims_style_class="required">
               <label>{Checked_by}</label>
             </input>
           </group>

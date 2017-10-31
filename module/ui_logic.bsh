@@ -1,5 +1,5 @@
 /*
- * GENERATED WITH FAIMS-TOOLS, SHA1: 45546006eb672ce6df46e511b2b5ab1b8cbced52
+ * GENERATED WITH FAIMS-TOOLS, SHA1: 9358b8028a05cd887efc2ab923e5a0d0b48dac35
  */
 import android.util.Log;
 import android.os.Build.MODEL;
@@ -315,7 +315,7 @@ REF_TO_TYPE.put("Brick/Description/Technology", "dropdown");
 REF_TO_TYPE.put("Brick/Description/Shape_Notes", "input");
 REF_TO_TYPE.put("Brick/Description/Material_Notes", "input");
 REF_TO_TYPE.put("Brick/Description/Preservation", "input");
-REF_TO_TYPE.put("Brick/Description/Validate", "input");
+REF_TO_TYPE.put("Brick/Description/Validate", "button");
 REF_TO_TYPE.put("Brick/Description/Date_Checked", "input");
 REF_TO_TYPE.put("Brick/Description/Checked_by", "input");
 REF_TO_TYPE.put("User_Login/User", "tab");
@@ -353,7 +353,6 @@ DATA_REFS.add("Brick/Description/Technology");
 DATA_REFS.add("Brick/Description/Shape_Notes");
 DATA_REFS.add("Brick/Description/Material_Notes");
 DATA_REFS.add("Brick/Description/Preservation");
-DATA_REFS.add("Brick/Description/Validate");
 DATA_REFS.add("Brick/Description/Date_Checked");
 DATA_REFS.add("Brick/Description/Checked_by");
 
@@ -2900,6 +2899,26 @@ void validateStart() {
   String validationMessage = validateFields(f, "PLAINTEXT");
   showWarning("{validation_results}", validationMessage);
 }
+void validateBrick() {
+  List f = new ArrayList(); // Fields to be validated
+  f.add(fieldPair("Brick/Site/Location", "{Location}"));
+  f.add(fieldPair("Brick/Site/Street_no", "{Street_no_}"));
+  f.add(fieldPair("Brick/Site/Street_Name", "{Street_Name}"));
+  f.add(fieldPair("Brick/Site/Suburb", "{Suburb}"));
+  f.add(fieldPair("Brick/Description/Colour", "{Colour}"));
+  f.add(fieldPair("Brick/Description/Width_cm", "{Width__cm_}"));
+  f.add(fieldPair("Brick/Description/Length_cm", "{Length__cm_}"));
+  f.add(fieldPair("Brick/Description/Height_cm", "{Height__cm_}"));
+  f.add(fieldPair("Brick/Description/Weight_g", "{Weight__g_}"));
+  f.add(fieldPair("Brick/Description/Brick_Photo", "{Brick_Photo}"));
+  f.add(fieldPair("Brick/Description/Frog_Type", "{Frog_Type}"));
+  f.add(fieldPair("Brick/Description/Technology", "{Technology}"));
+  f.add(fieldPair("Brick/Description/Preservation", "{Preservation}"));
+  f.add(fieldPair("Brick/Description/Checked_by", "{Checked_by}"));
+
+  String validationMessage = validateFields(f, "PLAINTEXT");
+  showWarning("{validation_results}", validationMessage);
+}
 
 
 /******************************************************************************/
@@ -3084,6 +3103,7 @@ void addNavigationButtons(String tabgroup) {
   removeNavigationButtons();
   List tabgroupsToValidate = new ArrayList();
   tabgroupsToValidate.add("Start");
+  tabgroupsToValidate.add("Brick");
   addNavigationButton("new", new ActionButtonCallback() {
     actionOnLabel() {
       "{New}";
@@ -4048,6 +4068,8 @@ addOnEvent("Start/Map", "show",  "refreshMap()");
 
 addOnEvent("Brick", "save", "clearGeometry()");
 addOnEvent("Brick", "save", "fillInGPSForBrick()");
+/********************************* VALIDATION *********************************/
+addOnEvent("Brick/Description/Validate", "click", "validateBrick()");
 
 
 /******************************************************************************/

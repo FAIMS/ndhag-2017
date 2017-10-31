@@ -96,6 +96,15 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: button
+        Ref:  Brick/Description/Validate
+     */
+    public static View get_Brick_Description_Validate(Solo solo) {
+        String ref = "Brick/Description/Validate";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: button
         Ref:  Brick/Site/Location_Plans_Button_1
      */
     public static View get_Brick_Site_LocationPlansButton1(Solo solo) {
@@ -289,15 +298,6 @@ public class ModuleUtil extends ModuleHelper {
      */
     public static EditText get_Brick_Description_ShapeNotes(Solo solo) {
         String ref = "Brick/Description/Shape_Notes";
-        return (android.widget.EditText) solo.getView((Object) ref);
-    }
-
-    /*
-        Type: input
-        Ref:  Brick/Description/Validate
-     */
-    public static EditText get_Brick_Description_Validate(Solo solo) {
-        String ref = "Brick/Description/Validate";
         return (android.widget.EditText) solo.getView((Object) ref);
     }
 

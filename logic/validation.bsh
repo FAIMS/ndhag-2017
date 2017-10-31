@@ -1,0 +1,2 @@
+/********************************* VALIDATION *********************************/
+addOnEvent("Brick/Description/Validate", "click", "validateBrick()");

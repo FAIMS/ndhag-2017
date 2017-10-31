@@ -37,14 +37,19 @@ If you have any questions about the module, please contact the FAIMS team at **e
 ## Screenshots:
 
 <p align="left">
-  <img src="https://github.com/petrajanouchova/Epigraphic_Module/blob/master/screenshots/Screenshot_20170912-113953.png" width="250"/>
-  <img src="xxx" width="250"/>
-  <img src="xxx" width="250"/>
+  <img src="https://github.com/FAIMS/ndhag-2017/blob/master/screenshots/Screenshot_20171031-141647.png" width="250"/>
+  <img src="https://github.com/FAIMS/ndhag-2017/blob/master/screenshots/Screenshot_20171031-141653.png" width="250"/>
+  <img src="https://github.com/FAIMS/ndhag-2017/blob/master/screenshots/Screenshot_20171031-141953.png" width="250"/>
 </p>
 
 <p align="left">
- <img src="xxx" width="250"/>
-  <img src="xxx" width="250"/>
-  <img src="xxx" width="250"/>
+ <img src="https://github.com/FAIMS/ndhag-2017/blob/master/screenshots/Screenshot_20171031-141957.png" width="250"/>
+  <img src="https://github.com/FAIMS/ndhag-2017/blob/master/screenshots/Screenshot_20171031-142002.png" width="250"/>
+  <img src="https://github.com/FAIMS/ndhag-2017/blob/master/screenshots/Screenshot_20171031-142016.png" width="250"/>
 </p>
 
+<p align="left">
+ <img src="https://github.com/FAIMS/ndhag-2017/blob/master/screenshots/Screenshot_20171031-142023.png" width="250"/>
+  <img src="https://github.com/FAIMS/ndhag-2017/blob/master/screenshots/Screenshot_20171031-142027.png" width="250"/>
+  <img src="https://github.com/FAIMS/ndhag-2017/blob/master/screenshots/Screenshot_20171031-142055.png" width="250"/>
+</p>

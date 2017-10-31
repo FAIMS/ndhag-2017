@@ -17,7 +17,7 @@ FAIMS **v2.5** (Android 6+)
 This module is licensed under an international Creative Commons Attribution 4.0 Licence (**CC BY 4.0**).
 
 ## Access:
-This module is part of the **FAIMS Demo library** on our publicly accessible Demo server (http://demo.fedarch.org/). 
+The module can be downloaded from this GitHub repository. 
 
 ## This module contains the following FAIMS features:
 * validated fields with user observations

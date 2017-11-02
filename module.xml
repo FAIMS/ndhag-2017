@@ -52,7 +52,7 @@
     </Location_Plans>
   </Site>
   <Description>
-    <Colour t="checkbox" f="notnull">
+    <Dominant_Colour t="checkbox" f="notnull">
       <desc>Check all colours that apply</desc>
       <opts>
         <opt>Black</opt>
@@ -100,12 +100,11 @@
     <Frog_Type f="notnull">
       <desc>Select the type of frog from the list.</desc>
       <opts>
+      	<opt>Diamond</opt>
+      	<opt>Heart-shaped</opt>
         <opt>Oval</opt>
-        <opt>Rectangular</opt>
         <opt>Oval (long)</opt>
-        <opt>Heart-shaped</opt>
         <opt>Oval (rectangular)</opt>
-        <opt>Diamond</opt>
         <opt>Oval (pointed)</opt>
         <opt>Rectangular</opt>
         <opt>Rectangular (short)</opt>
@@ -128,6 +127,7 @@
         <opt>Metal Mould</opt>
         <opt>Press</opt>
         <opt>Wooden Mould</opt>
+        <opt>Combined (notes)</opt>
         <opt>Other</opt>
         <opt>N/A</opt>
       </opts>
@@ -141,6 +141,10 @@
     <Preservation f="notnull">
       <desc>Describe the state of preservation of the material</desc>
     </Preservation>
+    <cols>
+     <Start_Year b="decimal" f="notnull"/>
+     <End_Year b="decimal" f="notnull"/>
+    </cols>
     <Validate t="button"/>
     <cols>
       <Date_Checked b="date">

@@ -118,7 +118,7 @@
               <Location_Plans_Button_1/>
             </Site>
             <Description>
-              <Colour/>
+              <Dominant_Colour/>
               <Width_cm/>
               <Length_cm/>
               <Height_cm/>
@@ -133,15 +133,17 @@
               <Shape_Notes/>
               <Material_Notes/>
               <Preservation/>
-              <Validate/>
               <Colgroup_1>
                 <Col_1>
-                  <Date_Checked/>
+                  <Start_Year/>
                 </Col_1>
                 <Col_2>
-                  <Checked_by/>
+                  <End_Year/>
                 </Col_2>
               </Colgroup_1>
+              <Validate/>
+              <Date_Checked/>
+              <Checked_by/>
             </Description>
           </Brick>
         </faims>
@@ -153,7 +155,9 @@
       <bind nodeset="/faims/Brick/Description/Length_cm" type="decimal"/>
       <bind nodeset="/faims/Brick/Description/Height_cm" type="decimal"/>
       <bind nodeset="/faims/Brick/Description/Weight_g" type="decimal"/>
-      <bind nodeset="/faims/Brick/Description/Colgroup_1/Col_1/Date_Checked" type="date"/>
+      <bind nodeset="/faims/Brick/Description/Colgroup_1/Col_1/Start_Year" type="decimal"/>
+      <bind nodeset="/faims/Brick/Description/Colgroup_1/Col_2/End_Year" type="decimal"/>
+      <bind nodeset="/faims/Brick/Description/Date_Checked" type="date"/>
     </model>
   </h:head>
   <h:body>
@@ -400,8 +404,8 @@
       </group>
       <group ref="Description">
         <label>{Description}</label>
-        <select faims_attribute_name="Colour" faims_attribute_type="vocab" ref="Colour" faims_style_class="required">
-          <label>{Colour}</label>
+        <select faims_attribute_name="Dominant Colour" faims_attribute_type="vocab" ref="Dominant_Colour" faims_style_class="required">
+          <label>{Dominant_Colour}</label>
           <item>
             <label>Options not loaded</label>
             <value>Options not loaded</value>
@@ -465,24 +469,30 @@
         <input faims_attribute_name="Preservation" faims_attribute_type="measure" ref="Preservation" faims_style_class="required">
           <label>{Preservation}</label>
         </input>
-        <trigger ref="Validate">
-          <label>{Validate}</label>
-        </trigger>
         <group ref="Colgroup_1" faims_style="orientation">
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>
-            <input faims_attribute_name="Date Checked" faims_attribute_type="measure" ref="Date_Checked">
-              <label>{Date_Checked}</label>
+            <input faims_attribute_name="Start Year" faims_attribute_type="measure" ref="Start_Year" faims_style_class="required">
+              <label>{Start_Year}</label>
             </input>
           </group>
           <group ref="Col_2" faims_style="even">
             <label/>
-            <input faims_attribute_name="Checked by" faims_attribute_type="measure" ref="Checked_by" faims_style_class="required">
-              <label>{Checked_by}</label>
+            <input faims_attribute_name="End Year" faims_attribute_type="measure" ref="End_Year" faims_style_class="required">
+              <label>{End_Year}</label>
             </input>
           </group>
         </group>
+        <trigger ref="Validate">
+          <label>{Validate}</label>
+        </trigger>
+        <input faims_attribute_name="Date Checked" faims_attribute_type="measure" ref="Date_Checked">
+          <label>{Date_Checked}</label>
+        </input>
+        <input faims_attribute_name="Checked by" faims_attribute_type="measure" ref="Checked_by" faims_style_class="required">
+          <label>{Checked_by}</label>
+        </input>
       </group>
     </group>
   </h:body>

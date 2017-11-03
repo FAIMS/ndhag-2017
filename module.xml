@@ -74,7 +74,7 @@
         <opt>Yellow</opt>
         <opt>White</opt>
       </opts>
-    </Colour>
+    </Dominant_Colour>
     <Width_cm b="decimal" f="notnull">
       Width (cm)
       <desc>Width in cm</desc>
@@ -143,14 +143,12 @@
      <End_Year b="decimal" f="notnull"/>
     </cols>
     <Validate t="button"/>
-    <cols>
-      <Date_Checked b="date">
-        <desc>Date of checking validity on entered data </desc>
-      </Date_Checked>
-      <Checked_by f="notnull">
-        <desc>The first and the last name of person checking the record against the artefact</desc>
-      </Checked_by>
-    </cols>
+    <Date_Checked b="date">
+      <desc>Date of checking validity on entered data </desc>
+    </Date_Checked>
+    <Checked_by f="notnull">
+      <desc>The first and the last name of person checking the record against the artefact</desc>
+    </Checked_by>
   </Description>
 </Brick>
 
@@ -159,6 +157,7 @@
 <!--@SOURCE: logic/custom-search.bsh-->
 <!--@SOURCE: logic/gis.bsh-->
 <!--@SOURCE: logic/validation.bsh-->
+<!--@SOURCE: logic/custom-duplication.bsh-->
 ]]></logic>
 
 </module>

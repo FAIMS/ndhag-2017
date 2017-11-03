@@ -21,7 +21,7 @@
         <param type="field" value="measure"/>
       </validator>
     </property>
-    <property name="Colour">
+    <property name="Dominant Colour">
       <validator type="blankchecker">
         <param type="field" value="vocab"/>
       </validator>
@@ -57,6 +57,16 @@
       </validator>
     </property>
     <property name="Preservation">
+      <validator type="blankchecker">
+        <param type="field" value="measure"/>
+      </validator>
+    </property>
+    <property name="Start Year">
+      <validator type="blankchecker">
+        <param type="field" value="measure"/>
+      </validator>
+    </property>
+    <property name="End Year">
       <validator type="blankchecker">
         <param type="field" value="measure"/>
       </validator>

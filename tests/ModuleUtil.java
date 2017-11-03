@@ -195,10 +195,10 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: checkbox
-        Ref:  Brick/Description/Colour
+        Ref:  Brick/Description/Dominant_Colour
      */
-    public static View get_Brick_Description_Colour(Solo solo) {
-        String ref = "Brick/Description/Colour";
+    public static View get_Brick_Description_DominantColour(Solo solo) {
+        String ref = "Brick/Description/Dominant_Colour";
         return (android.view.View) solo.getView((Object) ref);
     }
 
@@ -244,6 +244,15 @@ public class ModuleUtil extends ModuleHelper {
      */
     public static EditText get_Brick_Description_DateChecked(Solo solo) {
         String ref = "Brick/Description/Date_Checked";
+        return (android.widget.EditText) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
+        Ref:  Brick/Description/End_Year
+     */
+    public static EditText get_Brick_Description_EndYear(Solo solo) {
+        String ref = "Brick/Description/End_Year";
         return (android.widget.EditText) solo.getView((Object) ref);
     }
 
@@ -298,6 +307,15 @@ public class ModuleUtil extends ModuleHelper {
      */
     public static EditText get_Brick_Description_ShapeNotes(Solo solo) {
         String ref = "Brick/Description/Shape_Notes";
+        return (android.widget.EditText) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
+        Ref:  Brick/Description/Start_Year
+     */
+    public static EditText get_Brick_Description_StartYear(Solo solo) {
+        String ref = "Brick/Description/Start_Year";
         return (android.widget.EditText) solo.getView((Object) ref);
     }
 

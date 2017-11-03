@@ -114,7 +114,7 @@ ClickMapCreateRecord() {
     "\n- {Street_no_}" +
     "\n- {Street_Name}" +
     "\n- {Suburb}" +
-    "\n- {Colour}" +
+    "\n- {Dominant_Colour}" +
     "\n- {Width__cm_}" +
     "\n- {Length__cm_}" +
     "\n- {Height__cm_}" +
@@ -123,10 +123,18 @@ ClickMapCreateRecord() {
     "\n- {Frog_Type}" +
     "\n- {Technology}" +
     "\n- {Preservation}" +
+    "\n- {Start_Year}" +
+    "\n- {End_Year}" +
     "\n- {Checked_by}" +
     "\n" +
     "\n";
+
   String out = getStdout(Validate());
 
   assert(expected.equals(out));
+}
+
+// `duplicateBrick` THROWS NO EXCEPTIONS
+{
+  duplicateBrick();
 }

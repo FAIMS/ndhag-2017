@@ -1,9 +1,6 @@
 <!--@POSTPROC: ./postproc.sh-->
 
 <module>
-<!--TODO: Search filter by: Author, Date, Frog Type-->
-<!--TODO: a point created in map would open a new record-->
-<!--TODO: YYYY-MM-DD-->
 
 <User_Login f="nodata">
   <User f="noscroll">

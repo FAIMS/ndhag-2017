@@ -5,7 +5,7 @@ This module was created for the **Nepean District Historical Archaeology Group (
 This module was co-developed by Cristian Cuello at NDHAG and Petra Janouchova at the FAIMS Project, Department of Ancient History, Macquarie University.
 
 ## Funding:
-Development of this module was funded by **Research Attraction and Acceleration Program (RAAP)** aimed to support innovation and investment in the New South Wales in 2016 and 2017.
+Development of this module was funded by **Research Attraction and Acceleration Program (RAAP) NSW Department of Industry 16805/00** aimed to support innovation and investment in the New South Wales in 2016 and 2017.
 
 
 ## Date of release:
@@ -13,6 +13,7 @@ November 2017
 
 ## FAIMS Mobile version:
 FAIMS **v2.5** (Android 6+)
+
 ## Licence:
 This module is licensed under an international Creative Commons Attribution 4.0 Licence (**CC BY 4.0**).
 

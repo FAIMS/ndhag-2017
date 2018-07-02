@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+cd data
+tar -cvzf ../module/data.tar.gz * >/dev/null
+cd ..
+
 # Start working on our module definition files...
 cd module
 

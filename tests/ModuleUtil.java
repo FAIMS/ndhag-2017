@@ -194,20 +194,20 @@ public class ModuleUtil extends ModuleHelper {
     }
 
     /*
-        Type: checkbox
-        Ref:  Brick/Description/Dominant_Colour
+        Type: dropdown
+        Ref:  Brick/Description/Fabric_Feel
      */
-    public static View get_Brick_Description_DominantColour(Solo solo) {
-        String ref = "Brick/Description/Dominant_Colour";
+    public static View get_Brick_Description_FabricFeel(Solo solo) {
+        String ref = "Brick/Description/Fabric_Feel";
         return (android.view.View) solo.getView((Object) ref);
     }
 
     /*
         Type: dropdown
-        Ref:  Brick/Description/Frog_Type
+        Ref:  Brick/Description/Munsell_Soil_Colour_Chart
      */
-    public static View get_Brick_Description_FrogType(Solo solo) {
-        String ref = "Brick/Description/Frog_Type";
+    public static View get_Brick_Description_MunsellSoilColourChart(Solo solo) {
+        String ref = "Brick/Description/Munsell_Soil_Colour_Chart";
         return (android.view.View) solo.getView((Object) ref);
     }
 
@@ -240,6 +240,15 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: input
+        Ref:  Brick/Description/Colour_Notes
+     */
+    public static EditText get_Brick_Description_ColourNotes(Solo solo) {
+        String ref = "Brick/Description/Colour_Notes";
+        return (android.widget.EditText) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
         Ref:  Brick/Description/Date_Checked
      */
     public static EditText get_Brick_Description_DateChecked(Solo solo) {
@@ -267,6 +276,15 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: input
+        Ref:  Brick/Description/Frog_Other_Type
+     */
+    public static EditText get_Brick_Description_FrogOtherType(Solo solo) {
+        String ref = "Brick/Description/Frog_Other_Type";
+        return (android.widget.EditText) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
         Ref:  Brick/Description/Height_cm
      */
     public static EditText get_Brick_Description_Heightcm(Solo solo) {
@@ -289,15 +307,6 @@ public class ModuleUtil extends ModuleHelper {
      */
     public static EditText get_Brick_Description_MaterialNotes(Solo solo) {
         String ref = "Brick/Description/Material_Notes";
-        return (android.widget.EditText) solo.getView((Object) ref);
-    }
-
-    /*
-        Type: input
-        Ref:  Brick/Description/Preservation
-     */
-    public static EditText get_Brick_Description_Preservation(Solo solo) {
-        String ref = "Brick/Description/Preservation";
         return (android.widget.EditText) solo.getView((Object) ref);
     }
 
@@ -496,6 +505,33 @@ public class ModuleUtil extends ModuleHelper {
      */
     public static View get_Start_Map_Map(Solo solo) {
         String ref = "Start/Map/Map";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: picture
+        Ref:  Brick/Description/Fabric_Sorting
+     */
+    public static View get_Brick_Description_FabricSorting(Solo solo) {
+        String ref = "Brick/Description/Fabric_Sorting";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: picture
+        Ref:  Brick/Description/Frog_Type
+     */
+    public static View get_Brick_Description_FrogType(Solo solo) {
+        String ref = "Brick/Description/Frog_Type";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: radio
+        Ref:  Brick/Description/Preservation
+     */
+    public static View get_Brick_Description_Preservation(Solo solo) {
+        String ref = "Brick/Description/Preservation";
         return (android.view.View) solo.getView((Object) ref);
     }
 }

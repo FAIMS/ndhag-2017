@@ -21,7 +21,7 @@
         <param type="field" value="measure"/>
       </validator>
     </property>
-    <property name="Dominant Colour">
+    <property name="Munsell Soil Colour Chart">
       <validator type="blankchecker">
         <param type="field" value="vocab"/>
       </validator>
@@ -58,7 +58,7 @@
     </property>
     <property name="Preservation">
       <validator type="blankchecker">
-        <param type="field" value="measure"/>
+        <param type="field" value="vocab"/>
       </validator>
     </property>
     <property name="Start Year">

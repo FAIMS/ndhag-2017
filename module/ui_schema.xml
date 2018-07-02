@@ -118,7 +118,8 @@
               <Location_Plans_Button_1/>
             </Site>
             <Description>
-              <Dominant_Colour/>
+              <Munsell_Soil_Colour_Chart/>
+              <Colour_Notes/>
               <Width_cm/>
               <Length_cm/>
               <Height_cm/>
@@ -126,13 +127,16 @@
               <Brick_Photo/>
               <Brick_Photo_Button_1/>
               <Frog_Type/>
+              <Frog_Other_Type/>
               <Frog_Notes/>
               <Frog_Photo/>
               <Frog_Photo_Button_1/>
               <Technology/>
               <Shape_Notes/>
-              <Material_Notes/>
               <Preservation/>
+              <Fabric_Feel/>
+              <Fabric_Sorting/>
+              <Material_Notes/>
               <Colgroup_1>
                 <Col_1>
                   <Start_Year/>
@@ -404,13 +408,16 @@
       </group>
       <group ref="Description">
         <label>{Description}</label>
-        <select faims_attribute_name="Dominant Colour" faims_attribute_type="vocab" ref="Dominant_Colour" faims_style_class="required">
-          <label>{Dominant_Colour}</label>
+        <select1 faims_attribute_name="Munsell Soil Colour Chart" faims_attribute_type="vocab" ref="Munsell_Soil_Colour_Chart" faims_style_class="required">
+          <label>{Munsell_Soil_Colour_Chart}</label>
           <item>
             <label>Options not loaded</label>
             <value>Options not loaded</value>
           </item>
-        </select>
+        </select1>
+        <input faims_attribute_name="Colour Notes" faims_attribute_type="measure" ref="Colour_Notes">
+          <label>{Colour_Notes}</label>
+        </input>
         <input faims_attribute_name="Width cm" faims_attribute_type="measure" ref="Width_cm" faims_style_class="required">
           <label>{Width__cm_}</label>
         </input>
@@ -433,13 +440,16 @@
         <trigger ref="Brick_Photo_Button_1">
           <label>{Brick_Photo}</label>
         </trigger>
-        <select1 faims_attribute_name="Frog Type" faims_attribute_type="vocab" ref="Frog_Type" faims_style_class="required">
+        <select1 type="image" faims_attribute_name="Frog Type" faims_attribute_type="vocab" ref="Frog_Type" faims_style_class="required">
           <label>{Frog_Type}</label>
           <item>
             <label>Options not loaded</label>
             <value>Options not loaded</value>
           </item>
         </select1>
+        <input faims_attribute_name="Frog Other Type" faims_attribute_type="measure" ref="Frog_Other_Type">
+          <label>{Frog_Other_Type}</label>
+        </input>
         <input faims_attribute_name="Frog Notes" faims_attribute_type="measure" ref="Frog_Notes">
           <label>{Frog_Notes}</label>
         </input>
@@ -463,11 +473,29 @@
         <input faims_attribute_name="Shape Notes" faims_attribute_type="measure" ref="Shape_Notes">
           <label>{Shape_Notes}</label>
         </input>
+        <select1 appearance="full" faims_attribute_name="Preservation" faims_attribute_type="vocab" ref="Preservation" faims_style_class="required">
+          <label>{Preservation}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <select1 faims_attribute_name="Fabric Feel" faims_attribute_type="vocab" ref="Fabric_Feel">
+          <label>{Fabric_Feel}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <select1 type="image" faims_attribute_name="Fabric Sorting" faims_attribute_type="vocab" ref="Fabric_Sorting">
+          <label>{Fabric_Sorting}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
         <input faims_attribute_name="Material Notes" faims_attribute_type="measure" ref="Material_Notes">
           <label>{Material_Notes}</label>
-        </input>
-        <input faims_attribute_name="Preservation" faims_attribute_type="measure" ref="Preservation" faims_style_class="required">
-          <label>{Preservation}</label>
         </input>
         <group ref="Colgroup_1" faims_style="orientation">
           <label/>

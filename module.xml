@@ -49,32 +49,11 @@
     </Location_Plans>
   </Site>
   <Description>
-    <Dominant_Colour t="checkbox" f="notnull">
+    <Munsell_Soil_Colour_Chart f="notnull">
       <desc>Check all colours that apply</desc>
-      <opts>
-        <opt>Black</opt>
-        <opt>Brown</opt>
-        <opt>Dark Brown</opt>
-        <opt>Light Brown</opt>
-        <opt>Cream</opt>
-        <opt>Grey</opt>
-        <opt>Dark Grey</opt>
-        <opt>Light Grey</opt>
-        <opt>Orange</opt>
-        <opt>Dark Orange</opt>
-        <opt>Light Orange</opt>
-        <opt>Pink</opt>
-        <opt>Purple</opt>
-        <opt>Red</opt>
-        <opt>Dark Red</opt>
-        <opt>Light Red</opt>
-        <opt>Salmon</opt>
-        <opt>Dark Salmon</opt>
-        <opt>Light Salmon</opt>
-        <opt>Yellow</opt>
-        <opt>White</opt>
-      </opts>
-    </Dominant_Colour>
+      <!--@SOURCE: vocabs/munsel.xml-->
+    </Munsell_Soil_Colour_Chart>
+    <Colour_Notes/>
     <Width_cm b="decimal" f="notnull">
       Width (cm)
       <desc>Width in cm</desc>
@@ -97,19 +76,22 @@
     <Frog_Type f="notnull">
       <desc>Select the type of frog from the list.</desc>
       <opts>
-      	<opt>Diamond</opt>
-      	<opt>Heart-shaped</opt>
-        <opt>Oval</opt>
-        <opt>Oval (long)</opt>
-        <opt>Oval (rectangular)</opt>
-        <opt>Oval (pointed)</opt>
-        <opt>Rectangular</opt>
-        <opt>Rectangular (short)</opt>
-        <opt>Rectangular (long)</opt>
-        <opt>Other</opt>
+        <opt p="gallery/frog-type/anchor.jpg"         >Anchor</opt>
+        <opt p="gallery/frog-type/boot.jpg"           >Boot</opt>
+        <opt p="gallery/frog-type/crescent.jpg"       >Crescent</opt>
+        <opt p="gallery/frog-type/cruciform.jpg"      >Cruciform</opt>
+        <opt p="gallery/frog-type/diamond.jpg"        >Diamond</opt>
+        <opt p="gallery/frog-type/heart.jpg"          >Heart</opt>
+        <opt p="gallery/frog-type/oval_long.jpg"      >Oval long</opt>
+        <opt p="gallery/frog-type/oval_short.jpg"     >Oval short</opt>
+        <opt p="gallery/frog-type/rectangle_long.jpg" >Rectangle long</opt>
+        <opt p="gallery/frog-type/rectangle_short.jpg">Rectangle short</opt>
+        <opt p="gallery/frog-type/spade.jpg"          >Spade</opt>
+        <opt p="gallery/frog-type/other.JPG"          >Other &gt; Notes</opt>
         <opt>None</opt>
       </opts>
     </Frog_Type>
+    <Frog_Other_Type/>
     <Frog_Notes>
       <desc>Notes to the type of used frog</desc>
     </Frog_Notes>
@@ -132,12 +114,33 @@
     <Shape_Notes>
       <desc>Describe the shape of frog</desc>
     </Shape_Notes>
+    <Preservation t="radio" f="notnull">
+      <desc>Describe the state of preservation of the material</desc>
+      <opts>
+        <opt>Intact</opt>
+        <opt>Broken</opt>
+        <opt>N/A</opt>
+      </opts>
+    </Preservation>
+    <Fabric_Feel>
+      <opts>
+        <opt>Harsh</opt>
+        <opt>Rough</opt>
+        <opt>Smooth</opt>
+      </opts>
+    </Fabric_Feel>
+    <Fabric_Sorting>
+      <opts>
+        <opt p="gallery/fabric-sorting/very_good.PNG">Very good</opt>
+        <opt p="gallery/fabric-sorting/good.PNG"     >Good</opt>
+        <opt p="gallery/fabric-sorting/fair.PNG"     >Fair</opt>
+        <opt p="gallery/fabric-sorting/poor.PNG"     >Poor</opt>
+        <opt p="gallery/fabric-sorting/very_poor.PNG">Very poor</opt>
+      </opts>
+    </Fabric_Sorting>
     <Material_Notes>
       <desc>Describe what kind of material has been used</desc>
     </Material_Notes>
-    <Preservation f="notnull">
-      <desc>Describe the state of preservation of the material</desc>
-    </Preservation>
     <cols>
      <Start_Year b="decimal" f="notnull"/>
      <End_Year b="decimal" f="notnull"/>
